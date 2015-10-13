@@ -14,5 +14,18 @@
  *= require_self
  */
 
+
 @import "bootstrap-sprockets";
 @import "bootstrap";
+
+.post_title{
+	color: #00ff00;
+	text-indent: 50px;
+}
+.post_body{
+	text-indent: 60px;
+}
+
+.buttonsmov{
+	text-indent: 50px;
+}
