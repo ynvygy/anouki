@@ -31,14 +31,24 @@
             <li><a href="#">2014</a></li>
             <li><a href="#">2013</a></li>
             <li role="separator" class="divider"></li>
-            <li><a href="#">Events</a></li></ul>
+            <li><a href="#">Events</a></li></ul></li>
         <li class="active"><li><%= link_to "About Me", about_path %></li>
-        <li class="active"><li><%= link_to "Contact", "#"%></li>
-        </li>
+        <li class="active"><li><%= link_to "Contact", "#"%></li>  
+        <% if !user_signed_in? %>    
+            <li class="active"><li><%= link_to "Login", new_user_session_path %></li>
+        <% end %>
+        <% if user_signed_in? %>
+            <li class="active"><li><%= link_to "Logout", destroy_user_session_path, :method => :delete %></li>
+        <% end %>
+
       </ul>
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
 </nav>
+
+<% flash.each do |name, msg| %>
+  <%= content_tag(:div, msg, class: "alert") %>
+<% end %>
 
 <%= yield %>
 
