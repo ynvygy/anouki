@@ -42,6 +42,6 @@ class DrawingsController < ApplicationController
 	end
 
 	def drawing_params
-		params.require(:drawing).permit(:name, :description, :workcategory_id, :image)
+		params.require(:drawing).permit(:name, :description, :image)
 	end
 end
