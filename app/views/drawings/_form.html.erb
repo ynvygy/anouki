@@ -1,0 +1,25 @@
+<div class="col-sm-offset-4 col-sm-4">
+  <div class="form-group">
+	<%= form_for(Drawing.new) do |f| %>
+		<div class="col-sm-offset-3 col-sm-4">
+			<%= f.label :name %>
+			<%= f.text_field :name %>
+		</div>
+		<div class="col-sm-offset-3 col-sm-4">
+			<%= f.label :workcategory %>
+			<%= f.text_field :workcategory_id %>
+		</div>
+		<div class="col-sm-offset-3 col-sm-4">
+			<%= f.label :description %>
+			<%= f.text_area :description %>
+		</div>
+		<div class="col-sm-offset-3 col-sm-4">
+			<%= f.label :image %>
+			<%= f.file_field :image %>
+		</div>
+		<div class="col-sm-offset-3 col-sm-4">
+			<%= f.submit %>
+		</div>
+	<%end %>
+  </div>
+</div>

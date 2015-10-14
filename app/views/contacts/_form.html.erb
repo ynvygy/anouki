@@ -1,0 +1,17 @@
+<div class="col-sm-4">
+  <div class="form-group">
+	<%= form_for(Contact.new) do |f| %>
+		<div class="col-sm-offset-3 col-sm-4">
+			<%= f.label :name %>
+			<%= f.text_field :name %>
+		</div>
+		<div class="col-sm-offset-3 col-sm-4">
+			<%= f.label :clink %>
+			<%= f.text_area :clink %>
+		</div>
+		<div class="col-sm-offset-3 col-sm-4">
+			<%= f.submit %>
+		</div>
+	<%end %>
+  </div>
+</div>

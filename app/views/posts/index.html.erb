@@ -1,18 +1,17 @@
-<div class="buttonsmov">
-	<button type="button" class="btn btn-default"><%= link_to "Create new post", new_post_path%></button>
-</div>
 <% @posts.each do |post| %>
 <div class='post_wrapper'>
-	<h2 class="post_title"><%= link_to post.title, post %></h2>
-	<h3 class="post_body"><%= post.body %></h3>
+	<h3 class="post_title"><%= link_to post.title, post %></h3>
+	<h4 class="post_body"><%= post.body %></h4>
 	<p class="post_body"><%= post.created_at.strftime("%B, %d, %Y")%></p>
 </div>
-	<div class="buttonsmov">
+	<%if user_signed_in? && current_user.admin %>
+	<div class="indent50">
 		<div class="btn-group" role="group" aria-label="...">
-	  		<button type="button" class="btn btn-default"><a href="#">Edit</a></button>
+	  		<button type="button" class="btn btn-default"><%= link_to "Edit", edit_post_path(post.id) %></button>
 	  		<button type="button" class="btn btn-default"><%= link_to "Delete", post, method: :delete, data: { confirm: 'Are you sure?', class:"button" } %></button>
 		</div>
 	</div>
+	<%end%>
 <br>
 <% end %>
 >

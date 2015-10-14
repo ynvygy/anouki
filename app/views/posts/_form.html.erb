@@ -1,15 +1,20 @@
-
-<%= form_for(@post) do |f| %>
-	<div>
-		<%= f.label :title %>
-		<%= f.text_field :title %>
-	</div>
-	<div>
-		<%= f.label :body %>
-		<%= f.text_area :body %>
-	</div>
-	<div>
-		<%= f.submit %>
-	</div>
-<%end %>
+<div class="box panel-body">
+<div class="col-sm-offset-4 col-sm-4">
+  <div class="form-group">
+	<%= form_for(@post) do |f| %>
+		<div class="col-sm-offset-3 col-sm-4">
+			<%= f.label :title %>
+			<%= f.text_field :title %>
+		</div>
+		<div class="col-sm-offset-3 col-sm-4">
+			<%= f.label :body %>
+			<%= f.text_area :body %>
+		</div>
+		<div class="col-sm-offset-3 col-sm-4">
+			<%= f.submit %>
+		</div>
+	<%end %>
+  </div>
+</div>
+</div>
 

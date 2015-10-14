@@ -28,6 +28,9 @@ gem 'bootstrap-sass', '~> 3.3.5'
 gem 'simple_form', '~> 3.1.1'
 gem 'paperclip', '~> 4.3.0'
 gem 'mysql2', '~> 0.3.20'
+gem 'masonry-rails', '~> 0.2.4'
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin]
+
+

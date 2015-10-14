@@ -1,0 +1,16 @@
+<div class="indent50">
+	<h4>Drawings</h4>
+	<form class="form-inline" role="form">
+	<div class="imageimpr transitions-enabled">
+	<% @drawings.each do |drawing| %>
+		<div class="box panel-body"><%= image_tag drawing.image(:medium) %></div>
+		<h5><%=drawing.name%></h5>
+		<h5><%=drawing.description%></h5>
+	<% end %>
+	</div>
+	</form>
+	<%if user_signed_in? && current_user.admin %>
+		<%= render "form" %>
+	<%end%>
+</div>
+

@@ -1,0 +1,14 @@
+<div class="indent50">
+	<h4>Work Categories</h4>
+	<form class="form-inline" role="form">
+	<div class="form-group">
+	<div class="sameline">
+	<% @workcategories.each do |workcategory| %>
+		<h5><%=workcategory.name%></h5>
+		<h5><%= link_to "Edit",edit_workcategory_path(workcategory) %></h5>
+		<h5><%= link_to "Delete", workcategory, method: :delete, data: { confirm: 'Are you sure?', class:"button" } %></h5>
+	<% end %>
+	</div>
+	</div>
+	</form>
+</div>
