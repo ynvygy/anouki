@@ -30,7 +30,7 @@
           <ul class="dropdown-menu">
               <% unless @workcategories.nil? %>
                 <% @workcategories.each do |workcategory| %>
-                  <li><%= link_to workcategory.name, workcategory_list_path(workcategory.name) %></li>
+                  <li><%= link_to workcategory.name, workcategory_drawings_path(workcategory) %></li>
                 <% end %>
               <%end%>
             <li role="separator" class="divider"></li>

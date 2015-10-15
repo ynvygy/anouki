@@ -1,8 +1,7 @@
 <div class="indent50">
 	<h4>Drawings</h4>
-
 	<div class="imageimpr transitions-enabled container">
-	<% @drawingsz.each do |drawing| %>
+	<% @drawings.each do |drawing| %>
 		<div class="floatstyle">
 		<div class="box panel panel-default">
 			<%= link_to image_tag(drawing.image.url(:medium)),drawing %>

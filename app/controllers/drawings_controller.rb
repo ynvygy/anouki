@@ -1,6 +1,5 @@
 class DrawingsController < ApplicationController
 	before_action :find_drawing, only: [:edit, :update, :destroy]
-	before_filter :list
 	def index
 		@drawings = Drawing.all.order("created_at DESC")
 	end
@@ -32,12 +31,14 @@ class DrawingsController < ApplicationController
 		end
 	end
 
+	def list
+  		@drawings = Drawing.where(workcategory_id: params[:workcategory_id]).all
+	end
+
+
 	def destroy
 		@drawing.destroy
 		redirect_to drawings_path
-	end
-	def list
-  		@drawingsz = Drawing.order("drawings.id ASC").where(:workcategory_id => @workcategory.try(:name))
 	end
 
 	private
