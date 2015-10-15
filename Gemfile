@@ -29,10 +29,13 @@ gem 'masonry-rails', '~> 0.2.4'
 
 group :development, :test do
 	gem 'sqlite3', '1.3.10'
+	gem 'pry', '~> 0.10.2'
 end
 
 group :production do
-	gem 'mysql2', '~> 0.3.20'
+	gem 'pg', '~> 0.18.3'
+	gem 'rails_12factor'
+	#gem 'mysql2', '~> 0.3.20'
 end
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin]

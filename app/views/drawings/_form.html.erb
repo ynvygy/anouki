@@ -1,13 +1,13 @@
 <div class="col-sm-offset-4 col-sm-4">
   <div class="form-group">
-	<%= form_for(Drawing.new) do |f| %>
+	<%= simple_form_for(Drawing.new) do |f| %>
 		<div class="col-sm-offset-3 col-sm-4 container">
 			<%= f.label :name %>
 			<%= f.text_field :name %>
 		</div>
 		<div class="col-sm-offset-3 col-sm-4 container">
 			<%= f.label :workcategory %>
-			<%= f.text_field :workcategory_id%>
+			<%= f.input :workcategory_id, :collection => @workcategories, value_method: :id, %>
 		</div>
 		<div class="col-sm-offset-3 col-sm-4 container">
 			<%= f.label :description %>

@@ -4,12 +4,13 @@
 	<% @drawings.each do |drawing| %>
 		<div class="floatstyle">
 		<div class="box panel panel-default">
-			<%= link_to image_tag(drawing.image.url(:medium)),drawing %>
+			<%= link_to image_tag(drawing.image.url(:medium)) %>
 		</div>
 		<div class="panel-body">
 		<h5><%=drawing.name%></h5>
 		<h5><%=drawing.description%></h5>
 		</div>
+		<h5><%= link_to "Edit", edit_drawing_path(drawing) %></h5>
 		<h5><%= link_to "Delete", drawing, method: :delete, data: { confirm: 'Are you sure?', class:"button" } %></h5>
 		</div>
 	<% end %>
