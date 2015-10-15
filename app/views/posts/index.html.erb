@@ -7,7 +7,7 @@
 	<%if user_signed_in? && current_user.admin %>
 	<div class="indent50">
 		<div class="btn-group" role="group" aria-label="...">
-	  		<button type="button" class="btn btn-default"><%= link_to "Edit", edit_post_path(post.id) %></button>
+	  		<button type="button" class="btn btn-default"><%= link_to "Edit", edit_post_path(post.id)%></button>
 	  		<button type="button" class="btn btn-default"><%= link_to "Delete", post, method: :delete, data: { confirm: 'Are you sure?', class:"button" } %></button>
 		</div>
 	</div>

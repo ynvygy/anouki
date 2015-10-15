@@ -1,14 +1,19 @@
+<%= render "form" %>
+
 <div class="indent50">
 	<h4>Work Categories</h4>
 	<form class="form-inline" role="form">
 	<div class="form-group">
-	<div class="sameline">
+	<div class="container">
 	<% @workcategories.each do |workcategory| %>
-		<h5><%=workcategory.name%></h5>
-		<h5><%= link_to "Edit",edit_workcategory_path(workcategory) %></h5>
-		<h5><%= link_to "Delete", workcategory, method: :delete, data: { confirm: 'Are you sure?', class:"button" } %></h5>
+		<div class="container">
+		<h5 class="floatstyle"><%=workcategory.name%></h5>
+		<h5 class="floatstyle"><%= link_to "Edit",edit_workcategory_path(workcategory) %></h5>
+		<h5 class="floatstyle"><%= link_to "Delete", workcategory, method: :delete, data: { confirm: 'Are you sure?', class:"button" } %></h5></div>
 	<% end %>
 	</div>
 	</div>
 	</form>
 </div>
+
+

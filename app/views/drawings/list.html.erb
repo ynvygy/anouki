@@ -2,7 +2,7 @@
 	<h4>Drawings</h4>
 
 	<div class="imageimpr transitions-enabled container">
-	<% @drawings.each do |drawing| %>
+	<% @drawingsz.each do |drawing| %>
 		<div class="floatstyle">
 		<div class="box panel panel-default">
 			<%= link_to image_tag(drawing.image.url(:medium)),drawing %>
@@ -11,6 +11,7 @@
 		<h5><%=drawing.name%></h5>
 		<h5><%=drawing.description%></h5>
 		</div>
+		<h5><%= link_to "Delete", drawing, method: :delete, data: { confirm: 'Are you sure?', class:"button" } %></h5>
 		</div>
 	<% end %>
 	</div>
@@ -18,4 +19,3 @@
 		<%= render "form" %>
 	<%end%>
 </div>
-

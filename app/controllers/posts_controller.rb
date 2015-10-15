@@ -27,6 +27,12 @@ class PostsController < ApplicationController
 	end
 
 	def update
+		if @post.update_attributes(post_params)
+			flash[:notice] = "Post updated."
+			redirect_to(:action=>"index")
+		else
+			render("edit")
+		end
 	end
 
 	def destroy

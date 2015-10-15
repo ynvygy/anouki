@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   end
   resources :contacts
   resources :workcategories do
+    get :list, :controller => :drawings
     resources :drawings
   end
   resources :drawings

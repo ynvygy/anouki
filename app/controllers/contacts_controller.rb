@@ -8,7 +8,7 @@ class ContactsController < ApplicationController
 	end
 
 	def create
-		@contact = Contact.new(post_params)
+		@contact = Contact.new(contact_params)
 		if @contact.save
 			flash[:notice] = "Contact created"
 			redirect_to(:action=>'index', :contact_id => @contact.id)
@@ -27,7 +27,7 @@ class ContactsController < ApplicationController
 	def find_contact
 		@contact=Contact.find(params[:id])
 	end
-	def post_params
+	def contact_params
 		params.require(:contact).permit(:name, :clink)
 	end
 end

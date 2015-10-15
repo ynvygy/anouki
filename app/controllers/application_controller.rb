@@ -5,7 +5,7 @@ class ApplicationController < ActionController::Base
   before_action :work_categories
   private
   def work_categories
-  	@workcategory = Workcategory.all.order("created_at DESC")
+  	@workcategories = Workcategory.all.order("created_at DESC")
   end
 end
 

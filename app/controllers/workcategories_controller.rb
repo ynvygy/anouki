@@ -7,7 +7,7 @@ class WorkcategoriesController < ApplicationController
 		@workcategory = Workcategory.new
 	end
 	def create
-		@workcategory = Workcategory.new(post_params)
+		@workcategory = Workcategory.new(wcateg_params)
 		if @workcategory.save
 			flash[:notice] = "Workcategory created"
 			redirect_to(:action=>'index', :workcategory_id => @workcategory.id)
@@ -31,7 +31,7 @@ class WorkcategoriesController < ApplicationController
 	def find_workcategory
 		@workcategory=Workcategory.find(params[:id])
 	end
-	def post_params
+	def wcateg_params
 		params.require(:workcategory).permit(:name)
 	end
 end

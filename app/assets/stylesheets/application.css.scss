@@ -60,9 +60,9 @@ nav {
   margin: 0 auto;
   width: 100%;
   .box {
-	  margin: 10px;
+	  margin: 5px;
 	  width: 350px;
-	  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.22);
+	  box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.22);
 	  border-radius: 7px;
 	  text-align: center;
 	  img {
@@ -78,4 +78,21 @@ nav {
 	  	}
 	  }
 	}
+}
+
+.container{
+    float:left;
+    margin-right:5px;
+}
+
+.floatstyle{
+	float:left;
+	margin-right:3px;
+}
+
+textarea {
+	width: 600px;
+	height: 120px;
+	border: 3px solid #cccccc;
+	padding: 5px;
 }
