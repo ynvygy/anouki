@@ -1,5 +1,5 @@
 class DrawingsController < ApplicationController
-	before_action :find_drawing, only: [:edit, :update, :destroy]
+	before_action :find_drawing, only: [:edit, :update, :destroy, :show]
 	def index
 		@drawings = Drawing.all.order("created_at DESC")
 	end
@@ -22,6 +22,9 @@ class DrawingsController < ApplicationController
 	def edit
 	end
 
+	def show
+	end
+
 	def update
 		if @drawing.update_attributes(drawing_params)
 			flash[:notice] = "Drawing updated."
@@ -41,13 +44,17 @@ class DrawingsController < ApplicationController
 		redirect_to drawings_path
 	end
 
+	def search
+		@drawings = Drawing.search(params)
+	end
+
 	private
 	def find_drawing
 		@drawing=Drawing.find(params[:id])
 	end
 
 	def drawing_params
-		params.require(:drawing).permit(:name, :description, :image)
+		params.require(:drawing).permit( :name, :description, :image)
 	end
 
 end

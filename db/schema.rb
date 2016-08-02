@@ -33,7 +33,6 @@ ActiveRecord::Schema.define(version: 20151014080956) do
 
   create_table "drawings", force: true do |t|
     t.string   "name"
-    t.string   "image"
     t.text     "description"
     t.integer  "workcategory_id"
     t.datetime "created_at"

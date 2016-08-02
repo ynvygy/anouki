@@ -25,7 +25,7 @@ class WorkcategoriesController < ApplicationController
 
 	def destroy
 		@workcategory.destroy
-		redirect_to workcategory_path
+		redirect_to workcategories_path
 	end
 	private
 	def find_workcategory
